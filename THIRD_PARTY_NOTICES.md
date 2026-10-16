@@ -25,7 +25,7 @@
 
 ## 天气数据
 
-天气与日出日落由 [Open-Meteo](https://open-meteo.com/) 提供，使用前应遵守服务当时的许可及使用条件。应用当前没有接入三星天气或 The Weather Channel 的授权接口，也不含这些服务的 API 密钥。
+天气与日出日落可由 [Open-Meteo](https://open-meteo.com/) 或用户自行配置的[和风天气 QWeather](https://www.qweather.com/)提供，使用前应遵守各服务当时的许可、额度、认证及归因要求。和风账号的专属Host与API Key由用户填写，源码和发布APK不包含可用的共用凭据。应用当前没有接入三星天气或 The Weather Channel 的授权接口，也不含这些服务的 API 密钥。
 
 ## Gradle Wrapper
 
