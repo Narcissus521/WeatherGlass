@@ -8,14 +8,21 @@
 
 ## 下载
 
-- [v0.30 beta 发布页](https://github.com/Narcissus521/WeatherGlass/releases/tag/v0.30-beta)
-- [直接下载 APK](https://github.com/Narcissus521/WeatherGlass/releases/download/v0.30-beta/WeatherGlass-0.30.apk)
-- [下载完整源码工程](https://github.com/Narcissus521/WeatherGlass/releases/download/v0.30-beta/WeatherGlass-0.30-source.zip)
-- [SHA-256 校验文件](https://github.com/Narcissus521/WeatherGlass/releases/download/v0.30-beta/SHA256SUMS.txt)
+- [v0.31 beta 发布页](https://github.com/Narcissus521/WeatherGlass/releases/tag/v0.31-beta)
+- [直接下载 APK](https://github.com/Narcissus521/WeatherGlass/releases/download/v0.31-beta/WeatherGlass-0.31.apk)
+- [下载完整源码工程](https://github.com/Narcissus521/WeatherGlass/releases/download/v0.31-beta/WeatherGlass-0.31-source.zip)
+- [SHA-256 校验文件](https://github.com/Narcissus521/WeatherGlass/releases/download/v0.31-beta/SHA256SUMS.txt)
 
-> 完整源码以专用附件 **WeatherGlass-0.30-source.zip** 提供；本仓库目录当前展示说明与图片。GitHub自动生成的 Source code 归档仅包含仓库当前文件。
+> 完整源码以专用附件 **WeatherGlass-0.31-source.zip** 提供；本仓库目录当前展示说明与图片。GitHub自动生成的 Source code 归档仅包含仓库当前文件。
 
 Android 13及以上，重点验证设备为 Galaxy S25 Ultra。开发签名测试版，可保留数据覆盖此前同签名版本；自行编译通常使用不同证书。
+
+## 0.31 实际壁纸雾效修复
+
+- 修复预览正常、实际壁纸出现半透明多边形与直线接缝的问题：替换实际雾效OpenGL路径中的不稳定噪声哈希。
+- 预览AGSL、雾的层次/速度/浓度公式和全部素材保持原样；实际雾块随机分布会变化。
+- 雨、雪、晴及无天气的GLSL与0.30逐字节相同，保留2K/60fps视频、亮屏续播、天气源、5分钟刷新及原设置。
+- 已在S25 Ultra/Adreno830完成三档强度、三个时间点的18组离屏对比及噪声边界检查；锁屏观感由使用者验收，不将离屏结果当作满屏帧率或功耗测量。
 
 ## 0.30 亮屏续播修复
 
@@ -45,7 +52,9 @@ Android 13及以上，重点验证设备为 Galaxy S25 Ultra。开发签名测�
 
 Windows执行 `./gradlew.bat :app:assembleDebug :app:lintDebug`；其他平台执行 `./gradlew :app:assembleDebug :app:lintDebug`。APK位于 `app/build/outputs/apk/debug/app-debug.apk`。
 
-0.30通过构建、lint（0错误、1条原有提示）及升级签名检查；独立Android17模拟器27项恢复检查、107项既有回归与122项主机检查通过。发布的独立源码工程另通过构建、lint及主机检查。测试程序会改写测试设备状态，仅应在可丢弃的模拟器运行，不能用于日常手机。画面验收由使用者完成；不保证全程零掉帧或固定耗电。
+0.31通过构建、lint（0错误、1条原有提示）及升级签名检查；122项主机检查、实际手机GPU的18组雾效离屏输出及9组CPU参考比较通过。噪声边界专项测试140400对相邻点，修复后没有超过2个8bit码值的跳变。独立源码工程另做构建、lint与主机检查。0.30的27项恢复和107项Android回归为历史记录，本次未重跑该完整套件，也未重测满屏帧率或功耗。
+
+测试程序会改写测试设备状态，仅应在可丢弃的模拟器运行，不能用于日常手机。画面验收由使用者完成，不保证全程零掉帧或固定耗电。
 
 ## 隐私与权利
 
@@ -56,3 +65,4 @@ Windows执行 `./gradlew.bat :app:assembleDebug :app:lintDebug`；其他平台�
 ## 署名界面
 
 <img src="credits.png" width="320" alt="共同开发署名与作者头像" />
+
